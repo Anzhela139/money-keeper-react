@@ -1,5 +1,6 @@
 "use client";
 
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { useGetUsersQuery } from './store/services/userApi';
 import { decrement, increment, reset } from './store/features/counterSlice';
 import { useAppDispatch, useAppSelector } from "./store/hooks";

@@ -1,9 +1,11 @@
+
+
 export default function Aside() {
   return (
     <div className="app-drawer__inner fixed left-0 top-0 flex flex-col justify-end border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-1 pt-1 dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
       <a href="/" className="app-drawer__head">
         <div className="app-drawer__icon">
-            <span className="iconify" data-inline="false" data-icon="ic:outline-business-center"></span>
+
         </div>
         <div className="app-drawer__name">
             Small business money keeper

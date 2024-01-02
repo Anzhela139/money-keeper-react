@@ -10,7 +10,7 @@ export const userApi = createApi({
   reducerPath: "userApi",
   refetchOnFocus: true,
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://jsonplaceholder.typicode.com/",
+    baseUrl: '/accounts',
   }),
   endpoints: (builder) => ({
     getUsers: builder.query<User[], null>({

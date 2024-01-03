@@ -1,38 +1,51 @@
-.App {
-  text-align: center;
+@import 'typography.css';
+@import 'variables.css';
+
+.app {
+  position: relative;
+  background-color: var(--theme-background);
+  width: 100vw;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-drawer__inner {
+  position: fixed;
+  left: 0;
+  top: 8px;
+  height: 100vh;
+  width: 200px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 12px;
+  margin-left: 8px;
 }
 
-.App-link {
-  color: #61dafb;
+.app-cabinet {
+  position: fixed;
+  right: 12px;
+  top: 8px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn {
+  outline: none;
+  border: none;
+  color: var(--theme-color);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.btn-primary {
+  background-color: transparent;
+  border: 2px solid var(--theme-primary);
+  color: var(--theme-primary);
+}
+
+.app-drawer__name,
+.app-drawer__rout {
+  text-decoration: none;
+  color: var(--theme-color);
+  font-size: 1rem;
+  font-family: 'Noto', sans-serif;
+  font-weight: 400;
 }

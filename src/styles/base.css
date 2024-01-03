@@ -1,11 +1,12 @@
 @import 'typography.css';
 @import 'variables.css';
 
-.app {
+body {
   position: relative;
   background-color: var(--theme-background);
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 .app-drawer__inner {

@@ -2,7 +2,7 @@
 // import { useGetUsersQuery } from './store/services/userApi';
 // import { decrement, increment, reset } from './store/features/counterSlice';
 // import { useAppDispatch, useAppSelector } from "./store/hooks";
-import './App.css';
+import './styles/base.css';
 import Header from './components/header'
 import Aside from './components/aside'
 

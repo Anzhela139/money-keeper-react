@@ -7,6 +7,7 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  color: var(--theme-color);
 }
 
 .app-drawer__inner {
@@ -18,6 +19,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  margin: 0;
+  padding: 0;
   margin-left: 8px;
 }
 
@@ -34,6 +37,7 @@ body {
   padding: 8px 12px;
   border-radius: 8px;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .btn-primary {
@@ -43,10 +47,18 @@ body {
 }
 
 .app-drawer__name,
-.app-drawer__rout {
+.app-drawer__name a,
+.app-drawer__rout,
+.app-drawer__rout a{
   text-decoration: none;
   color: var(--theme-color);
   font-size: 1rem;
   font-family: 'Noto', sans-serif;
   font-weight: 400;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

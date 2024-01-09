@@ -6,22 +6,32 @@ body {
   background-color: var(--theme-background);
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
   color: var(--theme-color);
 }
 
 .app-drawer__inner {
   position: fixed;
   left: 0;
-  top: 8px;
+  top: 0;
+  margin-top: 8px;
   height: 100vh;
-  width: 200px;
+  width: 120px;
   display: flex;
+  -webkit-box-shadow: 1px 1px 1px 0px rgba(255,255,255,0.3);
+  -moz-box-shadow: 1px 1px 1px 0px rgba(255,255,255,0.3);
+  box-shadow: 1px 1px 1px 0px rgba(255,255,255,0.3);
   flex-direction: column;
   gap: 12px;
   margin: 0;
   padding: 0;
-  margin-left: 8px;
+  padding-left: 8px;
+  background-color: var(--theme-background);
+}
+
+.container {
+  width: calc(100vw - 168px);
+  margin-right: 24px;
 }
 
 .app-cabinet {
@@ -59,6 +69,6 @@ body {
 
 main {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 }

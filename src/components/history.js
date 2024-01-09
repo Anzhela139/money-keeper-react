@@ -1,11 +1,12 @@
-async function History() {
-  const historyData = [];
+import { useSelector } from 'react-redux';
+import { post, removePost, edit } from './../store/interactionsSlice';
+import { formatDate, formatPrice } from './../utils/formatters';
+import { useGetInteractionsQuery } from './../store/interactionsApi';
 
-  fetch()
-    .then(async(res) => {
-      historyData.push();
-    })
-    .catch((err) => console.log(err));
+function History() {
+  const interactions = useSelector((state) => state.interactions.value);
+
+  const { isLoading, isFetching, data, error } = useGetInteractionsQuery(null);
   return (
     <div>
       <div className="app-page__banner-title dark">
@@ -21,16 +22,30 @@ async function History() {
             <th>Contractor</th>
             <th>Cost</th>
             <th>Type</th>
-            <th>Income</th>
+            <th>Date</th>
             <th>Regular</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            {historyData.map((x, i) =>
-              <td key={i} />
-            )}
-          </tr>
+          {error ? (
+            <td><td>Oh no, there was an error</td></td>
+          ) : isLoading || isFetching ? (
+            <tr><td>Loading...</td></tr>
+          ) : data ? (
+            data.map((interaction, index) => (
+              <tr
+                key={interaction.id}
+              >
+                <td>{ index + 1 }</td>
+                <td>{interaction?.contactor?.name}</td>
+                <td>{interaction.work}</td>
+                <td>{formatPrice(interaction.cost)}</td>
+                <td>{interaction.type}</td>
+                <td>{formatDate(interaction.date)}</td>
+                <td>{interaction.regular}</td>
+              </tr>
+            ))
+          ) : null}
         </tbody>
       </table>
     </div>

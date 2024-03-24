@@ -1,5 +1,6 @@
 import { http, HttpResponse } from 'msw';
 import interactions from './../mockData/interactions';
+import users from './../mockData/users';
 import contractors from './../mockData/contactors';
  
 // Let's keep a map of all existing posts in memory.
@@ -24,10 +25,10 @@ export const handlers = [
       },
     })
   }),
-  http.get('/accounts/users', () => {
+  http.get('/users', () => {
     // Construct a JSON response with the list of all posts
     // as the response body.
-    return HttpResponse.json(Array.from(allPosts.values()));
+    return HttpResponse.json(Array.from(users.values()));
   }),
   http.get('/posts', () => {
     // Construct a JSON response with the list of all posts

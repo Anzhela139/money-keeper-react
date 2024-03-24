@@ -14,40 +14,32 @@ function History() {
         <h4>History of your interactions</h4>
       </div>
       <div className="container">   
-      <table className="history__interaction">
-        <thead>
-          <tr>
-            <th>№</th>
-            <th>Work</th>
-            <th>Contractor</th>
-            <th>Cost</th>
-            <th>Type</th>
-            <th>Date</th>
-            <th>Regular</th>
-          </tr>
-        </thead>
-        <tbody>
+      <div className="history__interaction">
+            <div>№</div>
+            <div>Work</div>
+            <div>Contractor</div>
+            <div>Cost</div>
+            <div>Type</div>
+            <div>Date</div>
+            <div>Regular</div>
           {error ? (
-            <td><td>Oh no, there was an error</td></td>
+            <div>Oh no, there was an error</div>
           ) : isLoading || isFetching ? (
-            <tr><td>Loading...</td></tr>
+            <div>Loading...</div>
           ) : data ? (
             data.map((interaction, index) => (
-              <tr
-                key={interaction.id}
-              >
-                <td>{ index + 1 }</td>
-                <td>{interaction?.contactor?.name}</td>
-                <td>{interaction.work}</td>
-                <td>{formatPrice(interaction.cost)}</td>
-                <td>{interaction.type}</td>
-                <td>{formatDate(interaction.date)}</td>
-                <td>{interaction.regular}</td>
-              </tr>
+              <>
+                <div>{ index + 1 }</div>
+                <div>{interaction?.contactor?.name}</div>
+                <div>{interaction.work}</div>
+                <div>{formatPrice(interaction.cost)}</div>
+                <div>{interaction.type}</div>
+                <div>{formatDate(interaction.date)}</div>
+                <div>{interaction.regular}</div>
+              </>
             ))
           ) : null}
-        </tbody>
-      </table>
+      </div>
     </div>
     </div>
   );

@@ -8,6 +8,7 @@ body {
   height: 100vh;
   overflow-x: hidden;
   color: var(--theme-color);
+  margin: 0;
 }
 
 .app-drawer__inner {
@@ -69,6 +70,28 @@ body {
 
 main {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  padding-left: 146px;
+  min-height: 100vh;
+}
+
+.home__container {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  column-gap: 16px;
+}
+
+.user-card {
+  border: 1px solid var(--theme-color);
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.history__interaction {
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+}
+
+.history__interaction div {
+  border-bottom: 1px solid var(--theme-color);
+  padding: 8px 4px;
 }

@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import interactionsSlice from './interactionsSlice';
 import usersSlice from './usersSlice';
+import authSlice from './authSlice';
 import { interactionsApi } from "./interactionsApi";
 import { usersApi } from "./usersApi";
 import { setupListeners } from "@reduxjs/toolkit/query/react";
@@ -10,6 +11,7 @@ export const store = configureStore({
         interactions: interactionsSlice,
         [interactionsApi.reducerPath]: interactionsApi.reducer,
         users: usersSlice,
+        auth: authSlice,
         [usersApi.reducerPath]: usersApi.reducer,
     },
     devTools: process.env.NODE_ENV !== "production",

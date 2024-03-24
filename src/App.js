@@ -3,7 +3,7 @@
 // import { decrement, increment, reset } from './store/features/counterSlice';
 // import { useAppDispatch, useAppSelector } from "./store/hooks";
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
-
+import { useSelector, useDispatch } from 'react-redux';
 import './styles/base.css';
 import Header from './components/header';
 import History from './components/history';
@@ -17,11 +17,14 @@ import Layout from './components/layout';
 import NoMatch from './components/noMatch';
 
 function App() {
+  const login = useSelector((state) => state.auth.value);
   return (
     <div className="app">
       <BrowserRouter>
         <div>
+        {login && 
           <Header />
+        }
         </div>
         <main className="flex min-h-screen flex-col items-center justify-between p-24">
           <Routes>
